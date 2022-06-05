@@ -65,31 +65,54 @@
 // tom.displayInfo();
 
 
-function Car(mName, mYear) {
-    this.name = mName,
-        this.year = mYear
-    this.getCarInfo = function () {
-        document.write("modeli" + this.name + "weli" + this.year)
-    }
-}
+// function Car(mName, mYear) {
+//     this.name = mName,
+//         this.year = mYear
+//     this.getCarInfo = function () {
+//         document.write("modeli" + this.name + "weli" + this.year)
+//     }
+// }
+
+
+// function User(pName, pAge) {
+//     this.name = pName;
+//     this.age = pAge;
+//     this.driveCar = function (car) {
+//         document.write(this.name + "kavs mankana" + car.name)
+//     };
+//     this.displayInfo = function () {
+//         document.write("saxeli" + this.name + "asaki" + this.age)
+//     }
+// }
+
+
+// var tom = new User("Tom", 26);
+// tom.displayInfo();
+
+// var tesla = new Car("Tesla ", 2008);
+
+// tom.driveCar(tesla);
 
 
 function User(pName, pAge) {
     this.name = pName;
     this.age = pAge;
-    this.driveCar = function (car) {
-        document.write(this.name + "kavs mankana" + car.name)
-    };
     this.displayInfo = function () {
         document.write("saxeli" + this.name + "asaki" + this.age)
     }
 }
 
 
-var tom = new User("Tom", 26);
-tom.displayInfo();
 
-var tesla = new Car("Tesla ", 2008);
+User.prototype.hello = function () {
+    document.write(this.name + "says hello")
 
-tom.driveCar(tesla);
+}
 
+User.prototype.maxAge = 110;
+
+var tom = new User("tom", 30);
+tom.hello();
+
+var john = new User("john", 100);
+john.hello(); 
